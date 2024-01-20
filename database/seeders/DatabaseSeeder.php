@@ -15,10 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\User::factory(10)->create();
+        \App\Models\Car::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'Goerges AYENI',
-            'email' => 'admin@mail.com',
+            'name' => 'Freddy AGBONA',
+            'email' => 'fred@gmail.com',
             'role' => 1
         ]);
     }

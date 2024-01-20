@@ -13,7 +13,7 @@
                 @foreach ($users as $user)
                 <div class=" p-4 border-b text-white">
                     <div class="flex flex-wrap justify-between">
-                        <div class="my-auto">
+                        <div class="my-auto text-black">
                             {{$user->name}}
                         </div>
                         @auth

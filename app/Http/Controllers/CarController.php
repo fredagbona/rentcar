@@ -13,9 +13,10 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = Car::with('user')->paginate(10);
+        $cars = Car::with('user')->orderBy('id', 'desc')->paginate(10);
 
         return view('cars.index', compact('cars'));
+        
     }
 
     /**

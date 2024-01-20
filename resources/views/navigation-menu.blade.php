@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                        <img src="logo.png" alt="logo RentCar" width="60">
                     </a>
                 </div>
 
@@ -24,18 +24,17 @@
                     </x-nav-link>
                         @if (Auth::user()->role == 1)
                         <x-nav-link href="{{ route('userslocate') }}" :active="request()->routeIs('userslocate')">
-                            {{ __('Liste utilisateurs ayant fait une location'.Auth::user()->role) }}
+                            {{ __('Liste utilisateurs ayant fait une location') }}
                         </x-nav-link>
                         
                         <x-nav-link href="{{ route('location.index') }}" :active="request()->routeIs('location.index')">
-                            {{ __('Toute les locations') }}
+                            {{ __('Toutes les locations') }}
                         </x-nav-link>
                         
-                        
-                        @endif
                         <x-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
                             {{ __('Liste utilisateurs') }}
                         </x-nav-link>
+                        @endif
                     @endauth
                 </div>
             </div>

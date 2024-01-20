@@ -21,6 +21,7 @@ class CarFactory extends Factory
             'name' => $this->faker->name(),
             'description' => $this->faker->text(),
             'price' => random_int(10, 200000),
+            'banner_image' => 'car.jpg',
             'user_id' => 1,
         ];
     }

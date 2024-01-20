@@ -1,15 +1,106 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Acceuil') }}
-        </h2>
-    </x-slot>
+   
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
-            </div>
+    
+<section class="mb-40">
+ 
+  <div class="relative overflow-hidden bg-cover bg-no-repeat" style="
+        background-position: 50%;
+        background-image: url('bg.jpg');
+        height: 500px;
+      ">
+    <div
+      class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
+      <div class="flex h-full items-center justify-start">
+        <div class="px-6 text-start text-white md:px-12">
+          <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+            Le meilleur endroit  <br /><span>pour louer un véhicule</span>
+          </h1>
+          <x-nav-link href="{{ route('cars.index') }}" :active="request()->routeIs('cars.index')"  class="rounded border-2 bg-white   text-black border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:outline-none focus:ring-0 ">
+                        {{ __('Louer maintenant') }}
+            </x-nav-link>
+          
         </div>
+      </div>
     </div>
+  </div>
+
+</section>
+
+
+<div class="container my-24 mx-auto md:px-6">
+
+  <section class="mb-32 text-center">
+    <h2 class="mb-20 text-3xl font-bold">Pourquoi nous choisir ?</h2>
+
+    <div class="grid lg:grid-cols-3 lg:gap-x-12">
+      <div class="mb-12 lg:mb-0">
+        <div
+          class="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+          <div class="flex justify-center">
+            <div class="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-primary shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="h-7 w-7">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+              </svg>
+            </div>
+          </div>
+          <div class="p-6">
+            <h5 class="mb-4 text-lg font-semibold">Support 24/7</h5>
+            <p>
+              Notre service client reste disponible tout le temps pour vous servir. 
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 lg:mb-0">
+        <div
+          class="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+          <div class="flex justify-center">
+            <div class="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-primary shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="h-7 w-7">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            </div>
+          </div>
+          <div class="p-6">
+            <h5 class="mb-4 text-lg font-semibold">Sécurité et robustesse</h5>
+            <p>
+              Notre application est fiable et sécurisé.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <div
+          class="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+          <div class="flex justify-center">
+            <div class="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-primary shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="h-7 w-7">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+              </svg>
+            </div>
+          </div>
+          <div class="p-6">
+            <h5 class="mb-4 text-lg font-semibold">Service Rapide</h5>
+            <p>
+              Nos voitures sont disponibles 24h/24 et 7j/7, offfrant une experience rapide à nos clients. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</div>
+
+  
+
 </x-app-layout>

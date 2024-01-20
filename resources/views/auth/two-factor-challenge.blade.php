@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <img src="logo.png" alt="logo RentCar" width="100">
         </x-slot>
 
         <div x-data="{ recovery: false }">

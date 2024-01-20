@@ -14,10 +14,10 @@
                 <div class="p-4 border-b text-white">
                     <div class="flex flex-wrap justify-between">
                         <div class="flex flex-wrap">
-                            <div class="my-auto">
+                            <div class="my-auto text-black">
                                 {{$loc->car->name}} :
                             </div>
-                            <div class="my-auto mx-2">
+                            <div class="my-auto mx-2 text-black">
                                 {{$loc->price}}
                             </div>
                         </div>

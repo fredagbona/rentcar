@@ -45,9 +45,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::get('/dashboard', 'App\Http\Controllers\CarController@index');
 
 Route::get('users', function () {
-    Gate::allowIf(auth()->user());
+    Gate::allowIf(auth()->user() && auth()->user()->role == 1);
     $users = User::paginate(10);
     return view('userlist', compact('users'));
 })->name('users');

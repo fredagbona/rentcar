@@ -7,7 +7,7 @@
 
             @auth
             @if (Auth::user()->role == 1)
-            <a href="{{ route('cars.create') }}" class="dark:text-white px-4 py-2 focus:outline rounded-lg bg-blue-900">
+            <a href="{{ route('cars.create') }}" class="text-white px-4 py-2 focus:outline rounded-lg bg-blue-900">
                 {{ __('Ajouter une nouvelle voiture') }}
             </a>
             @endif
@@ -21,6 +21,7 @@
                 @foreach ($cars as $car)
                 <div class="p-4 border-b text-white">
                     <div class="flex flex-wrap justify-between">
+                        
                         <div class="flex flex-wrap">
                             <div class="my-auto">
                                 <img src="{{ $car->banner_image }}" alt="{{ $car->banner_image }}">
@@ -32,6 +33,8 @@
                                 {{$car->status ? 'Disponible' : 'Indisponible'}}
                             </div>
                         </div>
+                        
+                        
                         @auth
                         <div class="flex">
                             @if ($car->status)
@@ -40,6 +43,7 @@
                                 {{ __('Louer') }}
                             </a>
                             @endif
+                            @if (Auth::user()->role == 1)
                             <a href="{{ route('cars.edit', $car) }}"
                                 class="dark:text-white mx-2 px-4 py-2 focus:outline rounded-lg bg-blue-900">
                                 {{ __('Modifier') }}
@@ -52,8 +56,16 @@
                                     {{ __('Supprimer') }}
                                 </button>
                             </form>
+                            @endif
+                            
                         </div>
                         @endauth
+                        @if (Auth::guest())
+                        <a href="{{ route('login') }}"
+                                class="dark:text-white mx-2 px-4 py-2 focus:outline rounded-lg bg-blue-900">
+                                {{ __('Connectez-vous ici pour pouvoir la louer') }}
+                            </a>
+                        @endif
                     </div>
                 </div>
                 @endforeach

@@ -52,9 +52,8 @@ class LocationController extends Controller
         $car->status = false;
 
         $car->update();
-
-
-        return redirect()->route('location.index')->with('success', 'Location added successfully');
+        
+        return redirect()->route('list-locations')->with('success', 'Location added successfully');
     }
 
     /**
@@ -102,8 +101,8 @@ class LocationController extends Controller
         }
 
 
-
-        return redirect()->route('location.index')->with('success', 'Location updated successfully');
+        return redirect()->route('list-locations')->with('success', 'Location updated successfully');
+        
     }
 
     /**
@@ -117,6 +116,7 @@ class LocationController extends Controller
         $location->car()->update(['location_id' => null]); // remove the profile association
         $location->delete();
         
-        return redirect()->route('location.index')->with('success', 'Location deleted successfully');
+        return redirect()->route('list-locations')->with('success', 'Location deleted successfully');
+        
     }
 }

@@ -5,7 +5,7 @@
                 Nouvelle location
             </h2>
 
-            <a href="{{ route('cars.index') }}" class="dark:text-white px-4 py-2 focus:outline rounded-lg bg-blue-900">
+            <a href="{{ route('cars.index') }}" class="text-white px-4 py-2 focus:outline rounded-lg bg-blue-900">
                 {{ __('Revenir à l\'accueil') }}
             </a>
         </div>
@@ -40,7 +40,7 @@
 
                     <input type="hidden" name="car_id" value="{{ $car->id }}">
 
-                    <button type="submit" class="bg-white p-2 dark:text-black rounded-lg ms-4 my-6">
+                    <button type="submit" class="text-white mx-2 px-4 py-2 focus:outline rounded-lg bg-blue-900">
                         {{ __('Louer la voiture') }}
                     </button>
                 </form>
